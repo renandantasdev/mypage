@@ -135,7 +135,7 @@ body{
     padding: 50px;
 }
 
-#projects-container {
+#projects-container { 
     justify-items: center;
     width: 100%;
     margin: auto;
@@ -143,6 +143,38 @@ body{
     grid-template-columns: repeat(3, 1fr);
 }
 
+#projects-container .projects {
+    position: relative;
+    display: block;
+    flex: 1 1 0px;
+    transition: transform 500ms;
+}
+
+#projects-container:focus-within .projects,
+#projects-container:hover .projects {
+    transform: translateX(0%);
+}
+
+.projects:focus ~ .projects,
+.projects:hover ~ .projects {
+    transform: translateX(5%);
+}
+  
+#projects-container .projects:focus,
+#projects-container .projects:hover {
+    transform: scale(1.3);
+    z-index: 1;
+}
+  
+.projects img {
+    display: block;
+    max-width: 100%;
+}
+
+.projects-title {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
 /* CONTACT */
 
 #contact{
